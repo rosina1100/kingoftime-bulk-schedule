@@ -1,0 +1,243 @@
+/* King of Time 一括スケジュール登録 - UIスタイル */
+/* 全classは kot-bulk- prefix でKOT本体のスタイルと衝突しない */
+
+/* 一括ボタン — 表示ボタンと同じスタイルで右隣に絶対配置 */
+.kot-bulk-toggle-btn {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: auto;
+  background-color: #1d9e48;
+  color: #fff;
+  border: 1px solid #1d9e48;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition: background-color 0.2s;
+}
+
+.kot-bulk-toggle-btn:hover {
+  background-color: #178a3e;
+  border-color: #178a3e;
+}
+
+.kot-bulk-panel {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  z-index: 99998;
+  width: 360px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 13px;
+  color: #333;
+  display: none;
+}
+
+.kot-bulk-panel.kot-bulk-open {
+  display: block;
+}
+
+.kot-bulk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.kot-bulk-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.kot-bulk-close-btn:hover {
+  opacity: 0.7;
+}
+
+.kot-bulk-body {
+  padding: 14px;
+}
+
+.kot-bulk-section {
+  margin-bottom: 14px;
+}
+
+.kot-bulk-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.kot-bulk-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.kot-bulk-select {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  background: #fff;
+}
+
+.kot-bulk-target-text {
+  padding: 6px 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.kot-bulk-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kot-bulk-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.kot-bulk-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.kot-bulk-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.kot-bulk-btn-preview {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.kot-bulk-btn-preview:hover {
+  background: #bdbdbd;
+}
+
+.kot-bulk-btn-execute {
+  background: #4CAF50;
+  color: white;
+}
+
+.kot-bulk-btn-execute:hover {
+  background: #388E3C;
+}
+
+.kot-bulk-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.kot-bulk-status {
+  margin-top: 14px;
+  padding: 8px 10px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+  min-height: 20px;
+}
+
+.kot-bulk-status.kot-bulk-status-error {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.kot-bulk-status.kot-bulk-status-success {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.kot-bulk-status.kot-bulk-status-loading {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.kot-bulk-progress {
+  width: 100%;
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  margin-top: 8px;
+  overflow: hidden;
+  display: none;
+}
+
+.kot-bulk-progress-bar {
+  height: 100%;
+  background: #4CAF50;
+  border-radius: 2px;
+  transition: width 0.3s;
+  width: 0%;
+}
+
+/* プレビューテーブル */
+.kot-bulk-preview {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  display: none;
+}
+
+.kot-bulk-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.kot-bulk-preview th,
+.kot-bulk-preview td {
+  padding: 4px 8px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.kot-bulk-preview th {
+  background: #f5f5f5;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+.kot-bulk-preview .kot-bulk-apply {
+  color: #2e7d32;
+}
+
+.kot-bulk-preview .kot-bulk-skip {
+  color: #9e9e9e;
+}

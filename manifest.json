@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "King of Time 一括スケジュール登録",
+  "version": "1.0.0",
+  "description": "King of Timeのスケジュール登録画面で、コピー元の1日のスケジュールを対象月の全平日に一括適用します",
+  "permissions": [],
+  "host_permissions": [
+    "https://s2.ta.kingoftime.jp/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://s2.ta.kingoftime.jp/admin/*"],
+      "js": [
+        "lib/kot-parser.js",
+        "lib/schedule-logic.js",
+        "lib/kot-api.js",
+        "content.js"
+      ],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
